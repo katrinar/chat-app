@@ -1,9 +1,9 @@
 var mongoose = require('mongoose')
 
 var ProfileSchema = new mongoose.Schema({
-	firstName:{type: String, lowercase:true, trime: true, default: ''},
-	lastName:{type: String, lowercase:true, trime: true, default: ''},
-	email:{type: String, lowercase: true, trime: true, default: ''},
+	firstName:{type: String, lowercase:true, trim: true, default: ''},
+	lastName:{type: String, lowercase:true, trim: true, default: ''},
+	email:{type: String, lowercase: true, trim: true, default: ''},
 	image:{type:String, trim: true, default: ''},
 	password:{type: String, default: ''},
 	timestamp:{type: String, default:Date.now}

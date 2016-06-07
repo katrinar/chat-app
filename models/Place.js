@@ -8,7 +8,8 @@ var PlaceSchema = new mongoose.Schema({
 	state:{type: String, lowercase: true, default: ''},
 	zip:{type: String, lowercase: true, default: ''},
 	timestamp:{type: String, default: ''},
-	admins:{type: Array, default: []}
+	admins:{type: Array, default: []},
+	geo: {type:[Number], index:'2d'}
 })
 
 PlaceSchema.methods.summary = function(){
@@ -19,11 +20,11 @@ PlaceSchema.methods.summary = function(){
 		city: this.city,
 		state: this.state,
 		zip: this.zip,
+		geo: this.geo,
 		admins: this.admins,
 		timestamp: this.timestamp, 
 		id: this._id
 	}
-
 	return summary
 }
 
