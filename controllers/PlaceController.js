@@ -34,7 +34,7 @@ module.exports = {
 				var place = places[i]
 				summaries.push(place.summary())
 			}
-				callback(null, places)
+				callback(null, summaries)
 			}
 		})
 	},
