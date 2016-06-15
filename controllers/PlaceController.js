@@ -66,6 +66,9 @@ module.exports = {
 	    	var geo = [location.lat, location.lng]
 	    	params['geo'] = geo
 
+	    	if (params['admins[]'] != null)
+	    		params['admins'] = params['admins[]']
+
 	    Place.create(params, function(err, place){
 			if(err){
 	 			if (callback != null)
