@@ -10,7 +10,6 @@ var ProfileSchema = new mongoose.Schema({
 
 ProfileSchema.methods.summary = function(){
 	var summary = {
-
 		username: this.username,
 		email: this.email,
 		image: this.image,
