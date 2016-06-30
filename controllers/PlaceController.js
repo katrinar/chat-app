@@ -4,6 +4,19 @@ var Request = require('../utils/Request')
 module.exports = {
 	get: function(params, isRaw, callback){
 
+		var key = params['key']
+		if (key == null){
+			callback({message: "Please include an API key."}, null)
+			return
+		}
+
+		if (key != '123'){ //temporary key for testing
+			callback({message: 'Invalid API key'}, null)
+			return
+		}
+
+		delete params['key']
+
 // this is a geospatial query
 		if (params.lat!=null && params.lng!=null){
 			var distance = 1000 / 6371
